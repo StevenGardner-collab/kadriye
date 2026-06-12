@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Link from "next/link";
 
 const roasts = [
   { mistake: "Merhaba, ben iyi.", correction: "Ben iyiyim.", roast: "Sıfat mı fiil mi bilmiyorsun? Benim komşum daha iyi Türkçe konuşuyor — duymazın istersen." },
@@ -23,18 +24,6 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-[#0f0e0c] text-white font-sans">
 
-      {/* Nav */}
-      <nav className="flex items-center justify-between px-6 py-5 max-w-5xl mx-auto">
-        <span className="text-lg font-semibold tracking-tight text-[#e8d5b0]">kadriye.</span>
-        <div className="flex gap-6 text-sm text-[#888] items-center">
-          <a href="#levels" className="hover:text-white transition-colors">Levels</a>
-          <a href="#about" className="hover:text-white transition-colors">About</a>
-          <button className="bg-[#c84b2f] text-white px-4 py-2 rounded-full text-sm hover:bg-[#e05535] transition-colors">
-            Start for free
-          </button>
-        </div>
-      </nav>
-
       {/* Hero */}
       <section className="max-w-5xl mx-auto px-6 pt-16 pb-12 text-center">
         <p className="text-[#c84b2f] text-sm font-medium tracking-widest uppercase mb-4">Turkish — the hard way. The right way.</p>
@@ -46,12 +35,18 @@ export default function Home() {
           Meet Kadriye — a 68-year-old grandmother from Trabzon who will teach you real Turkish, correct every mistake, and never, ever let you get away with sloppy grammar.
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
-          <button className="bg-[#c84b2f] text-white px-8 py-4 rounded-full text-base font-medium hover:bg-[#e05535] transition-all hover:scale-105">
+          <Link
+            href="/signup"
+            className="bg-[#c84b2f] text-white px-8 py-4 rounded-full text-base font-medium hover:bg-[#e05535] transition-all hover:scale-105"
+          >
             Meet Kadriye — it's free
-          </button>
-          <button className="border border-[#333] text-[#aaa] px-8 py-4 rounded-full text-base hover:border-[#555] hover:text-white transition-colors">
+          </Link>
+          <Link
+            href="/levels"
+            className="border border-[#333] text-[#aaa] px-8 py-4 rounded-full text-base hover:border-[#555] hover:text-white transition-colors"
+          >
             See all levels →
-          </button>
+          </Link>
         </div>
       </section>
 
@@ -125,14 +120,18 @@ export default function Home() {
             { level: "C1", name: "Fluent", desc: "Academic, formal, media Turkish", price: "£18/mo", color: "bg-[#1f1a2a] border-[#2f2a3e]" },
             { level: "C2", name: "Kadriye-Approved", desc: "You've earned her respect. Almost.", price: "£20/mo", color: "bg-[#2a1a10] border-[#3e2a18]" },
           ].map((l) => (
-            <div key={l.level} className={`${l.color} border rounded-2xl p-5 hover:scale-[1.02] transition-transform cursor-pointer`}>
+            <Link
+              key={l.level}
+              href="/levels"
+              className={`${l.color} border rounded-2xl p-5 hover:scale-[1.02] transition-transform cursor-pointer block`}
+            >
               <div className="flex items-center justify-between mb-3">
                 <span className="text-xs font-bold text-[#888] tracking-widest">{l.level}</span>
                 <span className="text-xs text-[#c84b2f] font-medium">{l.price}</span>
               </div>
               <p className="font-semibold text-white mb-1">{l.name}</p>
               <p className="text-xs text-[#666] leading-relaxed">{l.desc}</p>
-            </div>
+            </Link>
           ))}
         </div>
       </section>
@@ -157,9 +156,12 @@ export default function Home() {
       <section className="text-center py-24 px-6">
         <h2 className="text-4xl font-bold mb-4">Kadriye is waiting.</h2>
         <p className="text-[#666] mb-8">She's not patient. But she is effective.</p>
-        <button className="bg-[#c84b2f] text-white px-10 py-4 rounded-full text-base font-medium hover:bg-[#e05535] transition-all hover:scale-105">
+        <Link
+          href="/signup"
+          className="bg-[#c84b2f] text-white px-10 py-4 rounded-full text-base font-medium hover:bg-[#e05535] transition-all hover:scale-105 inline-block"
+        >
           Start learning — it's free
-        </button>
+        </Link>
       </section>
 
       <footer className="border-t border-[#1a1917] py-8 text-center text-xs text-[#444]">
