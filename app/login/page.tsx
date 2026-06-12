@@ -17,9 +17,9 @@ export default function LoginPage() {
     <main className="min-h-screen bg-[#0f0e0c] flex items-center justify-center px-6">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
-          <div className="w-14 h-14 rounded-full bg-[#c84b2f] flex items-center justify-center text-2xl font-bold text-white mx-auto mb-4">K</div>
+          <div className="w-14 h-14 rounded-full bg-[#c84b2f] flex items-center justify-center text-2xl font-bold text-white mx-auto mb-4">B</div>
           <h1 className="text-2xl font-bold text-white mb-2">Welcome back</h1>
-          <p className="text-[#666] text-sm">Kadriye has been waiting. Impatiently.</p>
+          <p className="text-[#666] text-sm">Barış has been waiting. Impatiently.</p>
         </div>
 
         <form onSubmit={handleLogin} className="space-y-4">
@@ -46,10 +46,7 @@ export default function LoginPage() {
             />
           </div>
 
-          <button
-            type="submit"
-            className="w-full bg-[#c84b2f] text-white py-4 rounded-xl font-medium hover:bg-[#e05535] transition-colors mt-2"
-          >
+          <button type="submit" className="w-full bg-[#c84b2f] text-white py-4 rounded-xl font-medium hover:bg-[#e05535] transition-colors mt-2">
             Log in →
           </button>
         </form>

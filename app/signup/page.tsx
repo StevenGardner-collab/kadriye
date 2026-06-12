@@ -11,7 +11,6 @@ export default function SignupPage() {
 
   const handleSignup = (e: React.FormEvent) => {
     e.preventDefault();
-    // Placeholder — will connect to auth later
     router.push("/dashboard");
   };
 
@@ -19,9 +18,9 @@ export default function SignupPage() {
     <main className="min-h-screen bg-[#0f0e0c] flex items-center justify-center px-6">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
-          <div className="w-14 h-14 rounded-full bg-[#c84b2f] flex items-center justify-center text-2xl font-bold text-white mx-auto mb-4">K</div>
+          <div className="w-14 h-14 rounded-full bg-[#c84b2f] flex items-center justify-center text-2xl font-bold text-white mx-auto mb-4">B</div>
           <h1 className="text-2xl font-bold text-white mb-2">Start your free trial</h1>
-          <p className="text-[#666] text-sm">7 days free. No credit card required.</p>
+          <p className="text-[#666] text-sm">7 days free. No credit card. Barış is ready when you are.</p>
         </div>
 
         <form onSubmit={handleSignup} className="space-y-4">
@@ -31,7 +30,7 @@ export default function SignupPage() {
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              placeholder="What should Kadriye call you?"
+              placeholder="What should Barış call you?"
               className="w-full bg-[#1a1917] border border-[#2a2926] rounded-xl px-4 py-3 text-white placeholder-[#444] focus:outline-none focus:border-[#c84b2f] transition-colors"
               required
             />
@@ -59,10 +58,7 @@ export default function SignupPage() {
             />
           </div>
 
-          <button
-            type="submit"
-            className="w-full bg-[#c84b2f] text-white py-4 rounded-xl font-medium hover:bg-[#e05535] transition-colors mt-2"
-          >
+          <button type="submit" className="w-full bg-[#c84b2f] text-white py-4 rounded-xl font-medium hover:bg-[#e05535] transition-colors mt-2">
             Start 7-day free trial →
           </button>
         </form>
@@ -76,7 +72,7 @@ export default function SignupPage() {
 
         <div className="mt-8 border-t border-[#1a1917] pt-6">
           <p className="text-center text-xs text-[#444]">
-            After your trial, plans start at £9/month. Cancel anytime.
+            After your trial, plans start at £12/month. Cancel anytime.
           </p>
         </div>
       </div>

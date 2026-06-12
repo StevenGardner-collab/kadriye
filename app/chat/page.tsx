@@ -3,13 +3,13 @@ import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 
 type Message = {
-  role: "user" | "kadriye";
+  role: "user" | "baris";
   text: string;
 };
 
 const opening: Message = {
-  role: "kadriye",
-  text: "Merhaba. I'm Kadriye. You want to learn Turkish? Good. Type something in Turkish — or try to. I'll tell you exactly what's wrong with it.",
+  role: "baris",
+  text: "Merhaba. I'm Barış. You want to learn Turkish? Good. Type something in Turkish — or try to. I'll tell you exactly what's wrong with it.",
 };
 
 export default function ChatPage() {
@@ -29,11 +29,10 @@ export default function ChatPage() {
     setInput("");
     setLoading(true);
 
-    // Placeholder response — will be replaced with real API call
     setTimeout(() => {
       const response: Message = {
-        role: "kadriye",
-        text: "Hmm. I see what you were trying to say. We'll work on this. The API connection is coming — Kadriye will be fully awake very soon.",
+        role: "baris",
+        text: "Hmm. I see what you were trying to say. We'll work on this. The API connection is coming — Barış will be fully awake very soon.",
       };
       setMessages((m) => [...m, response]);
       setLoading(false);
@@ -53,10 +52,10 @@ export default function ChatPage() {
       {/* Chat header */}
       <div className="flex items-center justify-between px-6 py-4 border-b border-[#1a1917]">
         <div className="flex items-center gap-3">
-          <div className="w-9 h-9 rounded-full bg-[#c84b2f] flex items-center justify-center text-sm font-bold text-white">K</div>
+          <div className="w-9 h-9 rounded-full bg-[#c84b2f] flex items-center justify-center text-sm font-bold text-white">B</div>
           <div>
-            <p className="text-sm font-medium text-white">Kadriye Hanım</p>
-            <p className="text-xs text-[#555]">Turkish language tutor · Trabzon, 1956</p>
+            <p className="text-sm font-medium text-white">Barış</p>
+            <p className="text-xs text-[#555]">TurkBite AI tutor · Knows every rule · Will use them against you</p>
           </div>
         </div>
         <Link href="/dashboard" className="text-xs text-[#555] hover:text-white transition-colors">
@@ -68,23 +67,21 @@ export default function ChatPage() {
       <div className="flex-1 overflow-y-auto px-6 py-6 space-y-4">
         {messages.map((msg, i) => (
           <div key={i} className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}>
-            {msg.role === "kadriye" && (
-              <div className="w-7 h-7 rounded-full bg-[#c84b2f] flex items-center justify-center text-xs font-bold text-white flex-shrink-0 mr-2 mt-0.5">K</div>
+            {msg.role === "baris" && (
+              <div className="w-7 h-7 rounded-full bg-[#c84b2f] flex items-center justify-center text-xs font-bold text-white flex-shrink-0 mr-2 mt-0.5">B</div>
             )}
-            <div
-              className={`max-w-sm rounded-2xl px-4 py-3 text-sm leading-relaxed ${
-                msg.role === "user"
-                  ? "bg-[#1a1917] text-white border border-[#2a2926]"
-                  : "bg-[#1f1410] text-[#e8d5b0] border border-[#3a2218]"
-              }`}
-            >
+            <div className={`max-w-sm rounded-2xl px-4 py-3 text-sm leading-relaxed ${
+              msg.role === "user"
+                ? "bg-[#1a1917] text-white border border-[#2a2926]"
+                : "bg-[#1f1410] text-[#e8d5b0] border border-[#3a2218]"
+            }`}>
               {msg.text}
             </div>
           </div>
         ))}
         {loading && (
           <div className="flex justify-start">
-            <div className="w-7 h-7 rounded-full bg-[#c84b2f] flex items-center justify-center text-xs font-bold text-white flex-shrink-0 mr-2 mt-0.5">K</div>
+            <div className="w-7 h-7 rounded-full bg-[#c84b2f] flex items-center justify-center text-xs font-bold text-white flex-shrink-0 mr-2 mt-0.5">B</div>
             <div className="bg-[#1f1410] border border-[#3a2218] rounded-2xl px-4 py-3">
               <div className="flex gap-1 items-center h-4">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#c84b2f] animate-bounce" style={{ animationDelay: "0ms" }} />

@@ -11,7 +11,7 @@ export default function Nav() {
   return (
     <nav className="flex items-center justify-between px-6 py-5 max-w-5xl mx-auto">
       <Link href="/" className="text-lg font-semibold tracking-tight text-[#e8d5b0]">
-        kadriye.
+        TurkBite.
       </Link>
       <div className="flex gap-6 text-sm text-[#888] items-center">
         <Link href="/levels" className="hover:text-white transition-colors">Levels</Link>

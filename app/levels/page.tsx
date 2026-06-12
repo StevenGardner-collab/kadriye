@@ -5,7 +5,7 @@ const levels = [
   {
     code: "A1",
     name: "Survivor",
-    desc: "Greetings, numbers, survival phrases. The basics Kadriye expects you to already know.",
+    desc: "Greetings, numbers, survival phrases. The basics Barış expects you to already know.",
     hours: "60–80 hours",
     lessons: 12,
     topics: ["Greetings & introductions", "Numbers 1–100", "Days & months", "Basic questions", "Family vocabulary", "Colours & shapes"],
@@ -14,7 +14,7 @@ const levels = [
   {
     code: "A2",
     name: "Visitor",
-    desc: "Daily life, transport, shopping. You can get around — but Kadriye isn't impressed yet.",
+    desc: "Daily life, transport, shopping. You can get around — but Barış isn't impressed yet.",
     hours: "180–200 hours",
     lessons: 18,
     topics: ["Shopping & markets", "Directions & transport", "Food & restaurants", "Present tense", "Simple past", "Telling the time"],
@@ -41,7 +41,7 @@ const levels = [
   {
     code: "C1",
     name: "Fluent",
-    desc: "Academic and formal Turkish. Kadriye is starting to nod with approval.",
+    desc: "Academic and formal Turkish. Barış is starting to nod with approval.",
     hours: "700–800 hours",
     lessons: 20,
     topics: ["Academic writing", "Legal & formal language", "Literature", "Complex clauses", "Professional Turkish", "Turkish history"],
@@ -49,8 +49,8 @@ const levels = [
   },
   {
     code: "C2",
-    name: "Kadriye-Approved",
-    desc: "You've done it. Kadriye won't admit she's proud. But she is.",
+    name: "Barış-Approved",
+    desc: "You've done it. Barış won't admit he's proud. But he is.",
     hours: "1000+ hours",
     lessons: 16,
     topics: ["Native-level fluency", "Cultural mastery", "Turkish philosophy", "Poetry & literature", "Debate at native level", "Final assessment"],
@@ -76,7 +76,7 @@ export default function LevelsPage() {
           <p className="text-[#c84b2f] text-xs uppercase tracking-widest mb-3">Curriculum</p>
           <h1 className="text-4xl font-bold text-white mb-4">A1 to C2 — the full journey</h1>
           <p className="text-[#666] max-w-lg mx-auto">
-            Every level is aligned to CEFR hours. No shortcuts. Kadriye won't allow it.
+            Every level is aligned to CEFR hours. No shortcuts. Barış won't allow it.
           </p>
         </div>
 
@@ -105,17 +105,11 @@ export default function LevelsPage() {
                 <div className="flex flex-col items-start md:items-end gap-2 flex-shrink-0">
                   <p className="text-xs text-[#555]">{level.lessons} lessons</p>
                   {level.free ? (
-                    <Link
-                      href="/signup"
-                      className="bg-[#c84b2f] text-white px-5 py-2 rounded-full text-sm hover:bg-[#e05535] transition-colors"
-                    >
+                    <Link href="/signup" className="bg-[#c84b2f] text-white px-5 py-2 rounded-full text-sm hover:bg-[#e05535] transition-colors">
                       Start free →
                     </Link>
                   ) : (
-                    <Link
-                      href="/pricing"
-                      className="border border-[#333] text-[#888] px-5 py-2 rounded-full text-sm hover:border-[#555] hover:text-white transition-colors"
-                    >
+                    <Link href="/pricing" className="border border-[#333] text-[#888] px-5 py-2 rounded-full text-sm hover:border-[#555] hover:text-white transition-colors">
                       Unlock with trial →
                     </Link>
                   )}
@@ -127,10 +121,7 @@ export default function LevelsPage() {
 
         <div className="mt-16 text-center">
           <p className="text-[#444] text-sm mb-4">All levels include offline PDF exercises</p>
-          <Link
-            href="/signup"
-            className="bg-[#c84b2f] text-white px-8 py-4 rounded-full text-base font-medium hover:bg-[#e05535] transition-colors"
-          >
+          <Link href="/signup" className="bg-[#c84b2f] text-white px-8 py-4 rounded-full text-base font-medium hover:bg-[#e05535] transition-colors">
             Start your free trial →
           </Link>
         </div>
